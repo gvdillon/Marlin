@@ -85,11 +85,17 @@
 #endif
 #define Z_CENTER ((Z_MIN_POS + Z_MAX_POS) / 2)
 
+//(GVD) had an issue with this, and I don't understand why the max and min bed size is being calcalated off of the already defined bed size??? i get that not all beds have a zero min, but what type of var are these?
+// when divided by 2, if an odd bed size is the remainder being dropped and the number being rounded??
 // Get the linear boundaries of the bed
-#define X_MIN_BED (X_CENTER - (X_BED_SIZE) / 2)
-#define X_MAX_BED (X_CENTER + (X_BED_SIZE) / 2)
-#define Y_MIN_BED (Y_CENTER - (Y_BED_SIZE) / 2)
-#define Y_MAX_BED (Y_CENTER + (Y_BED_SIZE) / 2)
+//#define X_MIN_BED (X_CENTER - (X_BED_SIZE) / 2)
+//#define X_MAX_BED (X_CENTER + (X_BED_SIZE) / 2)
+//#define Y_MIN_BED (Y_CENTER - (Y_BED_SIZE) / 2)
+//#define Y_MAX_BED (Y_CENTER + (Y_BED_SIZE) / 2)
+#define X_MIN_BED 0
+#define X_MAX_BED X_BED_SIZE
+#define Y_MIN_BED 0
+#define Y_MAX_BED Y_BED_SIZE
 
 /**
  * Dual X Carriage
