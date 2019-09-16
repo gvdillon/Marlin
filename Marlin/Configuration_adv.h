@@ -884,7 +884,8 @@
 #endif // HAS_LCD_MENU
 
 // Scroll a longer status message into view
-//#define STATUS_MESSAGE_SCROLLING
+//(gvd)
+#define STATUS_MESSAGE_SCROLLING
 
 // On the Info Screen, display XY with one decimal place when possible
 //#define LCD_DECIMAL_SMALL_XY
@@ -1346,7 +1347,8 @@
 //
 // G2/G3 Arc Support
 //
-#define ARC_SUPPORT               // Disable this feature to save ~3226 bytes
+//(gvd)
+//#define ARC_SUPPORT               // Disable this feature to save ~3226 bytes
 #if ENABLED(ARC_SUPPORT)
   #define MM_PER_ARC_SEGMENT  1   // Length of each arc segment
   #define MIN_ARC_SEGMENTS   24   // Minimum number of segments in a complete circle
@@ -1387,8 +1389,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//(gvd)
-#define MINIMUM_STEPPER_DIR_DELAY 20
+//#define MINIMUM_STEPPER_DIR_DELAY 3600
 
 /**
  * Minimum stepper driver pulse width (in µs)
