@@ -135,7 +135,7 @@
 
 // Name displayed in the LCD "Ready" message and Info menu
 //(GVD)
-#define CUSTOM_MACHINE_NAME "Hello, Dave. 1.3"
+#define CUSTOM_MACHINE_NAME "Hello, Dave. 1.4"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -463,6 +463,7 @@
 #define PIDTEMP
 #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
+//(gvd)
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 #if ENABLED(PIDTEMP)
   //(gvd)
@@ -495,9 +496,9 @@
   //#define DEFAULT_Kd 440
 
   //Ender 3 (gvd)
-  #define DEFAULT_Kp 21.39
-  #define DEFAULT_Ki 1.47
-  #define DEFAULT_Kd 77.94
+  #define DEFAULT_Kp 25.00
+  #define DEFAULT_Ki 1.20
+  #define DEFAULT_Kd 73.45
 #endif // PIDTEMP
 
 //===========================================================================
@@ -702,7 +703,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-//#define ENDSTOP_NOISE_THRESHOLD 2
+#define ENDSTOP_NOISE_THRESHOLD 2 //(gvd)
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -816,7 +817,7 @@
  *
  * Enable this option for a probe connected to the Z Min endstop pin.
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 /**
  * Z_MIN_PROBE_PIN
@@ -855,8 +856,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-//(gvd)
-#define FIX_MOUNTED_PROBE
+//#define FIX_MOUNTED_PROBE
 
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
@@ -923,13 +923,11 @@
  *     O-- FRONT --+
  *   (0,0)
  */
-//(gvd)
 #define X_PROBE_OFFSET_FROM_EXTRUDER -39  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -5.30   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-//(gvd)
 #define MIN_PROBE_EDGE 5
 
 // X and Y axis travel speed (mm/m) between probes
@@ -980,8 +978,7 @@
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
- //(gvd)
- #define Z_MIN_PROBE_REPEATABILITY_TEST
+//#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
